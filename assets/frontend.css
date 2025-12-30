@@ -1,0 +1,237 @@
+/**
+ * Vishavjeet Age Consent Banner - Frontend Styles
+ * Author: Vishavjeet Choubey
+ * URI: https://vishavjeet.in/
+ */
+
+/* Reset and Base Styles */
+body.wpvjacb-verification-page {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#wpvjacb-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999999;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+#wpvjacb-content {
+    text-align: center;
+    padding: 50px 40px;
+    max-width: 650px;
+    width: 90%;
+    animation: wpvjacb-fadeIn 0.6s ease-in-out;
+}
+
+@keyframes wpvjacb-fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Logo Styles */
+.wpvjacb-logo {
+    margin-bottom: 30px;
+}
+
+.wpvjacb-logo img {
+    max-width: 200px;
+    height: auto;
+}
+
+.wpvjacb-logo h2 {
+    font-size: 1.8em;
+    margin: 0;
+    font-weight: 700;
+}
+
+/* Heading and Text Styles */
+#wpvjacb-content h1 {
+    font-size: 2.8em;
+    margin-bottom: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+}
+
+#wpvjacb-content p {
+    font-size: 1.25em;
+    margin-bottom: 35px;
+    line-height: 1.6;
+    opacity: 0.9;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Button Container */
+#wpvjacb-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+/* Button Styles */
+#wpvjacb-buttons button {
+    padding: 16px 45px;
+    font-size: 1.15em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    min-width: 220px;
+    font-family: inherit;
+}
+
+#wpvjacb-confirm-btn {
+    background-color: #4CAF50;
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+#wpvjacb-confirm-btn:hover:not(:disabled) {
+    background-color: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+}
+
+#wpvjacb-confirm-btn:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+#wpvjacb-cancel-btn {
+    background-color: transparent;
+    color: inherit;
+    border: 2px solid currentColor;
+}
+
+#wpvjacb-cancel-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+#wpvjacb-cancel-btn:active {
+    transform: translateY(0);
+}
+
+/* Loading/Disabled State */
+#wpvjacb-buttons button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+/* Underage Message */
+#wpvjacb-underage-message {
+    margin-top: 30px;
+    padding: 25px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    animation: wpvjacb-fadeIn 0.5s ease-in-out;
+}
+
+#wpvjacb-underage-message p {
+    margin: 0;
+    font-size: 1.15em;
+    opacity: 1;
+}
+
+/* Footer */
+.wpvjacb-footer {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.85em;
+    opacity: 0.6;
+}
+
+.wpvjacb-footer p {
+    margin: 0;
+    font-size: 0.95em;
+}
+
+.wpvjacb-footer a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+    transition: opacity 0.3s ease;
+}
+
+.wpvjacb-footer a:hover {
+    opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #wpvjacb-content {
+        padding: 40px 30px;
+    }
+    
+    #wpvjacb-content h1 {
+        font-size: 2.2em;
+    }
+    
+    #wpvjacb-content p {
+        font-size: 1.1em;
+    }
+    
+    #wpvjacb-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    #wpvjacb-buttons button {
+        min-width: auto;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    #wpvjacb-content {
+        padding: 30px 20px;
+    }
+    
+    .wpvjacb-logo img {
+        max-width: 150px;
+    }
+    
+    #wpvjacb-content h1 {
+        font-size: 1.8em;
+    }
+    
+    #wpvjacb-content p {
+        font-size: 1em;
+    }
+    
+    #wpvjacb-buttons button {
+        padding: 14px 35px;
+        font-size: 1em;
+    }
+}
+
+/* Print Styles */
+@media print {
+    #wpvjacb-overlay {
+        display: none !important;
+    }
+}
